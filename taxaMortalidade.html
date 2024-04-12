@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortalidade</title>
+</head>
+<body>
+
+    <script>
+        // Entrada de dados
+let tipoCalculo = prompt("Digite o tipo de cálculo (N-natalidade, M-mortalidade):");
+let numeroHabitantes = prompt("Digite o número de habitantes:");
+let numeroEventos;
+
+// Converte a entrada para número
+numeroHabitantes = Number(numeroHabitantes);
+
+let taxa;
+
+// Processamento de dados
+switch (tipoCalculo.toUpperCase()) {
+    case 'N': // Natalidade
+        numeroEventos = prompt("Digite o número de crianças nascidas:");
+        numeroEventos = Number(numeroEventos);
+        taxa = (numeroEventos * 1000) / numeroHabitantes;
+        break;
+    case 'M': // Mortalidade
+        numeroEventos = prompt("Digite o número de óbitos:");
+        numeroEventos = Number(numeroEventos);
+        taxa = (numeroEventos * 1000) / numeroHabitantes;
+        break;
+    default:
+        alert("Tipo de cálculo inválido.");
+        break;
+}
+
+// Saída de dados
+if (taxa) {
+    alert("A taxa calculada é: " + taxa.toFixed(2));
+}
+
+    </script>
+    
+</body>
+</html>

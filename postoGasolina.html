@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto</title>
+</head>
+<body>
+
+    <script>
+
+        // Preços por litro
+let precoAlcool = 4.90;
+let precoGasolina = 5.30;
+
+// Entrada de dados
+let combustivel = prompt("Digite o tipo de combustível (A-álcool, G-gasolina):");
+let litros = prompt("Digite a quantidade de litros:");
+
+// Converte a entrada de litros para número
+litros = Number(litros);
+
+let precoTotal;
+let desconto;
+
+// Processamento de dados
+switch (combustivel.toUpperCase()) {
+    case 'A': // Álcool
+        if (litros <= 20) {
+            desconto = 0.03; // Desconto de 3%
+        } else {
+            desconto = 0.05; // Desconto de 5%
+        }
+        precoTotal = litros * precoAlcool * (1 - desconto);
+        break;
+    case 'G': // Gasolina
+        if (litros <= 20) {
+            desconto = 0.04; // Desconto de 4%
+        } else {
+            desconto = 0.06; // Desconto de 6%
+        }
+        precoTotal = litros * precoGasolina * (1 - desconto);
+        break;
+    default:
+        alert("Tipo de combustível inválido.");
+        break;
+}
+
+// Saída de dados
+if (precoTotal) {
+    alert("O valor total a ser pago é: R$" + precoTotal.toFixed(2));
+}
+
+
+
+    </script>
+    
+</body>
+</html>

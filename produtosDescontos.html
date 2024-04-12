@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProdutosDesc</title>
+</head>
+<body>
+    <script>
+        // Entrada de dados
+let nomeProduto = prompt("Digite o nome do produto:");
+let quantidade = prompt("Digite a quantidade adquirida:");
+let precoUnitario = prompt("Digite o preço unitário:");
+
+// Converte a entrada para número
+quantidade = Number(quantidade);
+precoUnitario = Number(precoUnitario);
+
+let total = quantidade * precoUnitario; // Calcula o total
+let desconto;
+
+// Processamento de dados
+if (quantidade <= 5) {
+    desconto = total * 0.02; // Desconto de 2%
+} else if (quantidade > 5 && quantidade <= 10) {
+    desconto = total * 0.03; // Desconto de 3%
+} else {
+    desconto = total * 0.05; // Desconto de 5%
+}
+
+let totalAPagar = total - desconto; // Calcula o total a pagar
+
+// Saída de dados
+alert("Produto: " + nomeProduto + "\nQuantidade: " + quantidade + "\nPreço Unitário: R$" + precoUnitario.toFixed(2) + "\nTotal: R$" + total.toFixed(2) + "\nDesconto: R$" + desconto.toFixed(2) + "\nTotal a Pagar: R$" + totalAPagar.toFixed(2));
+
+
+
+    </script>
+</body>
+</html>
