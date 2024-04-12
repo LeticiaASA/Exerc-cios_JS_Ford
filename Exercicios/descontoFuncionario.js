@@ -3,6 +3,34 @@
 // valor total da compra efetuada e um código que identifique se o comprador é um cliente comum (1), funcionário (2) ou vip (3).
 
 
+function calcularDesconto (codigo, valorTotal) {
+    var desconto;
+    switch(codigo) {
+        case 1: //Cliente comum
+            desconto = 0;
+            break;
+        case 2: //Funcionário
+            desconto = 0.10; //10% de desconto
+            break;
+        case 3: //VIP
+            desconto = 0.05; //5% de desconto
+            break;
+        default:
+            console.log("Código Inválido");
+            return    
+    }
+
+    var valorComDesconto = valorTotal - (valorTotal*desconto);
+        return valorComDesconto;
+}
+
+//Testando a função
+    var codigo = 2; //Suponha que o código seja 2 (Funcionário)
+    var valorTotal = 100; //Suponha que o valor total da compra seja 100
+    var valorFinal = calcularDesconto(codigo, valorTotal);
+
+console.log ("O valor final com desconto é:" + valorFinal);
+console.log ("O código do cliente é:" + codigo);
 
 
 

@@ -1,6 +1,19 @@
 // Desenvolva um programa que recebe do usuário, o placar de um jogo de futebol (os gols de cada time) e informa se o resultado foi um empate, se a vitória foi do primeiro time ou do segundo time.
 
+function resultadoJogo(golsFlamengo, golsPalmeiras) {
+    if(golsFlamengo == golsPalmeiras) {
+        return "O jogo terminou empatado";
+    } else if(golsFlamengo > golsPalmeiras) {
+        return "O Flamengo venceu!";
+    } else{
+        return "O Palmeira venceu!";
+    }
+}
 
+    var golsFlamengo = prompt("Digite o número de gols do Flamengo");
+    var golsPalmeiras = prompt("Digite o número de gols do Palmeiras");
+
+    alert(resultadoJogo(golsFlamengo,golsPalmeiras));
 //entrada de dados
 // = informar os dois times de futebol
 // = informar o placar do jogo
